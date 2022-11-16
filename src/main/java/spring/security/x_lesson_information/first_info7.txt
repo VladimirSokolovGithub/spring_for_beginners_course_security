@@ -1,0 +1,98 @@
+Глава 7 - chapter_7_Spring_Security - рассматривается в отдельном проекте
+- spring_for_beginners_course_security
+
+ВСЯ ИНФОРМАЦИЯ ТАКЖЕ ЕСТЬ В ПРОЕКТЕ
+***********************************************************************
+
+*** Les_1_Знакомство со Spring Security ***
+
+***********************************************************************
+
+*** Les_2_конфигурация приложения ***
+
+Создаём Maven проект - Maven archetype Webapp.
+В main создаем directory java - помечаем её как source root directory.
+Данный проект будет конфигурироваться исключительно java кодом без использования xml файлов
+
+1.Добавление dependency в pom файл.
+
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.3.23</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>5.7.3</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>5.7.3</version>
+    </dependency>
+
+  </dependencies>
+
+2. Создание конфигурационного java класса.
+
+3. Создание класса для реализации Dispatcher Servlet.
+
+4. Добавление в проект Tomcat.
+
+5. Создание Security Initializer.
+
+6. Создание конфигурации для Spring Security.
+
+***********************************************************************
+
+*** Les_3_Процедура аутентификации ***
+
+***********************************************************************
+
+*** Les_4_Процедура авторизации ***
+
+***********************************************************************
+
+*** Les_5_Хранение пароля в БД в нешифрованном формате ***
+
+***********************************************************************
+
+На уроках рассмотренных ранее мы хранили логины, пароли и роли в самом приложении,
+в классе MySecurityConfig. Но это конечно же неправильно. И теперь мы рассмотрим хранение
+всего этого в БД.
+
+
+***********************************************************************
+
+*** Les_6_Хранение пароля в БД в зашифрованном формате ***
+
+Разработчики Spring рекомендуют использовать алгоритм шифрования bcrypt для
+шифрования паролей. bcrypt - предоставляет одностороннее шифрование, т.е.
+из зашифрованного пароля никак нельзя получить его текстовый вариант.
+Для bcrypt шифрования можно писать логику шифрования самим следуя
+определенным правилам. Или же мы можем использовать сайты, которые производят
+шифрование текста. bcrypt online в поисковике - Bcrypt Hash Generator - Online
+- Browserling Web Developer ...https://www.browserling.com ›
+
+***********************************************************************
